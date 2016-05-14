@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.osanchezhuerta.hr.employees</groupId>
+    <artifactId>employees-hr-ws</artifactId>
+    <version>0.0.0.1</version>
+  </parent>
+  <artifactId>employees-hr-ws-soa</artifactId>
+  <packaging>pom</packaging>
+  <name>employees-hr-ws-soa</name>
+  <description>employees-hr-ws-soa</description>
+  <modules>
+  	<module>employees-hr-ws-soa-commons</module>
+  	<module>employees-hr-ws-soa-model</module>
+  	<module>employees-hr-ws-soa-persistence</module>
+  	<module>employees-hr-ws-soa-services</module>
+  	<module>employees-hr-ws-soa-integration</module>
+  	<module>employees-hr-ws-soa-integration-api</module>
+  	<module>employees-hr-ws-soa-app</module>
+  </modules>
+</project>
