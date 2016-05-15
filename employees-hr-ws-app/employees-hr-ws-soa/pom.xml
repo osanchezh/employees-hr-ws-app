@@ -17,5 +17,6 @@
   	<module>employees-hr-ws-soa-integration</module>
   	<module>employees-hr-ws-soa-integration-api</module>
   	<module>employees-hr-ws-soa-app</module>
+  	<module>employees-hr-ws-soa-logger</module>
   </modules>
 </project>

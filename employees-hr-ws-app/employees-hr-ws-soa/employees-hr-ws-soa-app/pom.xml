@@ -6,7 +6,53 @@
     <version>0.0.0.1</version>
   </parent>
   <artifactId>employees-hr-ws-soa-app</artifactId>
-  <packaging>war</packaging>
   <name>employees-hr-ws-soa-app</name>
   <description>employees-hr-ws-soa-app</description>
+  <packaging>ear</packaging>
+
+
+	<dependencies>
+	
+			
+	    <dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-logger</artifactId>
+			<version>${project.parent.version}</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-persistence</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-services</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+			<exclusions>
+				<exclusion>
+					<groupId>org.osanchezhuerta.hr.employees</groupId>
+					<artifactId>employees-hr-ws-soa-persistence</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-integration</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+			<exclusions>
+				<exclusion>
+					<groupId>org.osanchezhuerta.hr.employees</groupId>
+					<artifactId>employees-hr-ws-soa-services</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	
 </project>

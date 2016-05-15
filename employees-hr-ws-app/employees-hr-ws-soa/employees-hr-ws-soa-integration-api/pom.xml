@@ -8,4 +8,13 @@
   <artifactId>employees-hr-ws-soa-integration-api</artifactId>
   <name>employees-hr-ws-soa-integration-api</name>
   <description>employees-hr-ws-soa-integration-api</description>
+  <packaging>jar</packaging>
+  	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>

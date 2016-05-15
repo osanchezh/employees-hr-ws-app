@@ -8,4 +8,80 @@
   <artifactId>employees-hr-ws-soa-integration</artifactId>
   <name>employees-hr-ws-soa-integration</name>
   <description>employees-hr-ws-soa-integration</description>
+  <packaging>ejb</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-integration-api</artifactId>
+			<version>${project.parent.version}</version>
+			
+		</dependency>
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-services</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.osanchezhuerta.hr.employees</groupId>
+			<artifactId>employees-hr-ws-soa-commons</artifactId>
+			<version>${project.parent.version}</version>
+			
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${java-ee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+
+   		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${jcl.slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>${maven-ejb-plugin.version}</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

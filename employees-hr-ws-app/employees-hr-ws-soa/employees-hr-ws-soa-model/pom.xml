@@ -8,4 +8,31 @@
   <artifactId>employees-hr-ws-soa-model</artifactId>
   <name>employees-hr-ws-soa-model</name>
   <description>employees-hr-ws-soa-model</description>
+  <packaging>jar</packaging>
+  <dependencies>
+
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>${javax.persistence.version}</version>
+			 <scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${javax-validation}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	
+		<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>
