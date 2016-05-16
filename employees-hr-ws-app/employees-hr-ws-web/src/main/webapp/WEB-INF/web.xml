@@ -1,0 +1,51 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+     version="2.5">
+  <display-name>employess-hr-ws</display-name>
+  
+        
+
+<listener>
+    <listener-class>
+            com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+    </listener-class>
+</listener>
+<servlet>
+ <description>JAX-WS endpoint DictamenElectronicoBDTUService</description>
+ <display-name>JAX-WS servlet  DictamenElectronicoBDTUService</display-name>
+    <servlet-name>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</servlet-name>
+    <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</servlet-name>
+    <url-pattern>/DictamenElectronicoBDTUServiceHttpSoap11Endpoint</url-pattern>
+</servlet-mapping>
+
+
+<!-- 
+    <servlet>
+        <servlet-name>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</servlet-name>
+        <servlet-class>mx.gob.imss.cit.de.comunes.services.bdtu.ws.facade.DictamenElectronicoBDTUService</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</servlet-name>
+        <url-pattern>/DictamenElectronicoBDTUServiceHttpSoap11Endpoint</url-pattern>
+    </servlet-mapping>
+     -->
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+    <welcome-file-list>
+      <welcome-file>/pages/index.jsp</welcome-file>
+    </welcome-file-list>
+
+   
+
+
+  
+          
+</web-app>

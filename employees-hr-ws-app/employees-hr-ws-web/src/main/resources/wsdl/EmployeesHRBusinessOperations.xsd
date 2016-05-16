@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:imssdomain="http://domain.web.ws.hr.employees.osanchezhuerta.org/xsd/"
+	xmlns:ns="http://facade.web.ws.hr.employees.osanchezhuerta.org/"
+	targetNamespace="http://facade.web.ws.hr.employees.osanchezhuerta.org/"
+	elementFormDefault="qualified" attributeFormDefault="qualified"
+	version="1.0">
+	<xs:import
+		namespace="http://domain.web.ws.hr.employees.osanchezhuerta.org/xsd/"
+		schemaLocation="EmployeesHRBusinessObjects.xsd" />
+
+
+	<xs:element name="Exception">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="error" type="xs:anyType" nillable="true"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="bajaEmployee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderRequest" type="imssdomain:governanceHeaderRequest"
+					minOccurs="1" />
+				<xs:element name="bajaPersonaFisicaContactoInput" type="ns:bajaPersonaFisicaMedioContactoInput"
+					minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="bajaPersonaFisicaMedioContactoInput">
+		<xs:sequence>
+			<xs:element name="cveIdPersonafContacto" type="xs:long"
+				nillable="true" minOccurs="1" />
+			<xs:element name="cveIdPersona" type="xs:long" nillable="true"
+				minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="bajaEmployeeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderResponse" type="imssdomain:governanceHeaderResponse"
+					minOccurs="1" />
+				<xs:element name="bajaMedioContacto" type="xs:int"
+					nillable="true" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="insertarDepartments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderRequest" type="imssdomain:governanceHeaderRequest"
+					minOccurs="1" />
+				<xs:element name="obtenerPersonaFisicaContactoInput"
+					type="ns:obtenerPersonaFisicaContactoInput" minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="obtenerPersonaFisicaContactoInput">
+		<xs:sequence>
+			<xs:element name="cveIdPersonafContacto" type="xs:long"
+				nillable="true" minOccurs="1" />
+			<xs:element name="cveIdPersona" type="xs:long" nillable="true"
+				minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="insertarDepartmentsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderResponse" type="imssdomain:governanceHeaderResponse"
+					minOccurs="1" />
+				<xs:element name="obtenerPersonaFisicaContactOutput"
+					type="imssdomain:DitPersonafContactoVO" nillable="true" minOccurs="1"
+					maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="consultarSalariesPorRango">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderRequest" type="imssdomain:governanceHeaderRequest"
+					minOccurs="1" />
+				<xs:element name="obtenerPersonaMoralContactoInput" type="ns:obtenerPersonaMoralContactoInput"
+					minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="obtenerPersonaMoralContactoInput">
+		<xs:sequence>
+			<xs:element name="cveIdPersonaMContacto" type="xs:long"
+				nillable="true" minOccurs="1" />
+			<xs:element name="cveIdPersonaMoral" type="xs:long"
+				nillable="true" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="consultarSalariesPorRangoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderResponse" type="imssdomain:governanceHeaderResponse"
+					minOccurs="1" />
+				<xs:element name="ditPersonaMoralContactoOutput" type="imssdomain:DitPersonaMoralContactoVO"
+					nillable="true" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="consultarTitlesPorEmpNo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderRequest" type="imssdomain:governanceHeaderRequest"
+					minOccurs="1" />
+				<xs:element name="obtenerPersonaMoralContactoInput" type="ns:obtenerPersonaMoralContactoInput"
+					minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="consultarTitlesPorEmpNoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="governanceHeaderResponse" type="imssdomain:governanceHeaderResponse"
+					minOccurs="1" />
+				<xs:element name="ditPersonaMoralContactoOutput" type="imssdomain:DitPersonaMoralContactoVO"
+					nillable="true" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+	

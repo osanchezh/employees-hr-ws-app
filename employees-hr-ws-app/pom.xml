@@ -75,6 +75,9 @@
 		<commons-logging-1>1.1.1</commons-logging-1>
 		<commons-digester>2.1</commons-digester>
 		<commons-beanutils>1.9.0</commons-beanutils>
+		
+		<loghome.app>/home/osanchezhuerta/loghome</loghome.app>
+		
 	</properties>
 
 	<build>
@@ -134,4 +137,24 @@
 			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
 	</repositories>
+
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>employees-hr-ws</distribution>
+		</license>
+	</licenses>
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+  	<scm>
+  		<url>scm:https://github.com/osanchezhuerta/employees-hr-ws-app.git</url>
+  		<developerConnection>osanchezhuerta</developerConnection>
+  	</scm>
+  	<organization>
+  		<url>http://zeosaho.blogspot.mx/</url>
+  		<name>Code Fixes</name>
+  	</organization>
 </project>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="EmployeesHRService"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:hr="http://facade.web.ws.hr.employees.osanchezhuerta.org/"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+	targetNamespace="http://facade.web.ws.hr.employees.osanchezhuerta.org/">
+	<wsdl:documentation>
+<![CDATA[
+@author: osanchezhuerta@gmail.com
+]]>
+	</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:hr="http://facade.web.ws.hr.employees.osanchezhuerta.org/"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified">
+			<xs:import namespace="http://facade.web.ws.hr.employees.osanchezhuerta.org/"
+				schemaLocation="EmployeesHRBusinessOperations.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="bajaEmployeeRequest">
+		<wsdl:part name="parameters" element="hr:bajaEmployee" />
+	</wsdl:message>
+	<wsdl:message name="bajaEmployeeResponse">
+		<wsdl:part name="parameters" element="hr:bajaEmployeeResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="insertarDepartmentsRequest">
+		<wsdl:part name="parameters" element="hr:insertarDepartments" />
+	</wsdl:message>
+	<wsdl:message name="insertarDepartmentsResponse">
+		<wsdl:part name="parameters" element="hr:insertarDepartmentsResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="consultarSalariesPorRangoRequest">
+		<wsdl:part name="parameters" element="hr:consultarSalariesPorRango" />
+	</wsdl:message>
+
+	<wsdl:message name="consultarSalariesPorRangoResponse">
+		<wsdl:part name="parameters" element="hr:consultarSalariesPorRangoResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="consultarTitlesPorEmpNoRequest">
+		<wsdl:part name="parameters" element="hr:consultarTitlesPorEmpNo" />
+	</wsdl:message>
+
+	<wsdl:message name="consultarTitlesPorEmpNoResponse">
+		<wsdl:part name="parameters" element="hr:consultarTitlesPorEmpNoResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="DictamenElectronicoBdtuServiceException">
+		<wsdl:part name="parameters" element="hr:Exception" />
+	</wsdl:message>
+
+	<wsdl:portType name="EmployeesHRServicePortType">
+
+
+		<wsdl:operation name="bajaEmployee">
+			<wsdl:input message="hr:bajaEmployeeRequest" wsaw:Action="urn:bajaEmployee" />
+			<wsdl:output message="hr:bajaEmployeeResponse" wsaw:Action="urn:bajaEmployeeResponse" />
+			<wsdl:fault name="bajaEmployeeException" message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:bajaEmployeeException" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="insertarDepartments">
+			<wsdl:input message="hr:insertarDepartmentsRequest" wsaw:Action="urn:insertarDepartmentsRequest" />
+			<wsdl:output message="hr:insertarDepartmentsResponse" wsaw:Action="urn:insertarDepartmentsResponse" />
+			<wsdl:fault name="insertarDepartmentsException"
+				message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:insertarDepartmentsException" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="consultarSalariesPorRango">
+			<wsdl:input message="hr:consultarSalariesPorRangoRequest" wsaw:Action="urn:consultarSalariesPorRango" />
+			<wsdl:output message="hr:consultarSalariesPorRangoResponse" wsaw:Action="urn:consultarSalariesPorRangoResponse" />
+			<wsdl:fault name="consultarSalariesPorRangoException"
+				message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:consultarSalariesPorRangoException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="consultarTitlesPorEmpNo">
+			<wsdl:input message="hr:consultarTitlesPorEmpNoRequest" wsaw:Action="urn:consultarTitlesPorEmpNo" />
+			<wsdl:output message="hr:consultarTitlesPorEmpNoResponse" wsaw:Action="urn:consultarTitlesPorEmpNoResponse" />
+			<wsdl:fault name="consultarTitlesPorEmpNoException" message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:consultarTitlesPorEmpNoException" />
+		</wsdl:operation>
+
+
+
+	</wsdl:portType>
+
+	<wsdl:binding name="EmployeesHRServiceSoap11Binding"
+		type="hr:EmployeesHRServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="bajaEmployee">
+			<soap:operation soapAction="urn:bajaEmployee"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="bajaEmployeeException">
+				<soap:fault name="bajaEmployeeException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="insertarDepartments">
+			<soap:operation soapAction="urn:insertarDepartments" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="insertarDepartmentsException">
+				<soap:fault name="insertarDepartmentsException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+
+		<wsdl:operation name="consultarSalariesPorRango">
+			<soap:operation soapAction="urn:consultarSalariesPorRango" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="consultarSalariesPorRangoException">
+				<soap:fault name="consultarSalariesPorRangoException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="consultarTitlesPorEmpNo">
+			<soap:operation soapAction="urn:consultarTitlesPorEmpNo" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="consultarTitlesPorEmpNoException">
+				<soap:fault name="consultarTitlesPorEmpNoException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+	<wsdl:service name="EmployeesHRService">
+		<wsdl:port name="EmployeesHRServiceHttpSoap11Endpoint"
+			binding="hr:EmployeesHRServiceSoap11Binding">
+			<soap:address
+				location="http://localhost:8080/employees-hr/services/EmployeesHRServiceHttpSoap11Endpoint" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

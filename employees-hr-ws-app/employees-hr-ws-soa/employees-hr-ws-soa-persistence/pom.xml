@@ -42,8 +42,16 @@
 			<version>${java-ee.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
-
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>6.0.2</version>
+</dependency>
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.38</version>
+</dependency>
    		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -120,4 +128,24 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>employees-hr-ws</distribution>
+		</license>
+	</licenses>
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+  	<scm>
+  		<url>scm:https://github.com/osanchezhuerta/employees-hr-ws-app.git</url>
+  		<developerConnection>osanchezhuerta</developerConnection>
+  	</scm>
+  	<organization>
+  		<url>http://zeosaho.blogspot.mx/</url>
+  		<name>Code Fixes</name>
+  	</organization>
 </project>
