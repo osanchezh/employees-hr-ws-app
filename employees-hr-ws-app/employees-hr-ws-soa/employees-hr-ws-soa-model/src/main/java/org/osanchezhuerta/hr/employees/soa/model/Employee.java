@@ -33,6 +33,14 @@ public class Employee implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name="hire_date")
 	private Date hireDate;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="update_date")
+	private Date updateDate;
+
+
+	private byte active;
+
 
 	@Column(name="last_name")
 	private String lastName;
@@ -56,6 +64,24 @@ public class Employee implements Serializable {
 	public Employee() {
 	}
 
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public byte getActive() {
+		return active;
+	}
+
+	public void setActive(byte active) {
+		this.active = active;
+	}
+	
+	
 	public int getEmpNo() {
 		return this.empNo;
 	}
