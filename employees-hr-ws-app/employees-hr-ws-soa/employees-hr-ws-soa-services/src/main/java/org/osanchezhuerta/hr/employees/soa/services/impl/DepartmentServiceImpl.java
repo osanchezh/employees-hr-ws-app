@@ -22,7 +22,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public int insertarDepartment(DepartmentTO departmentTO) {
-		return departmentsDAO.insertarDepartment(DeparmentTransformer.toEntity(departmentTO));
+		int resultado=1;
+		departmentsDAO.create(DeparmentTransformer.toEntity(departmentTO));
+		return resultado;
 	
 	}
 

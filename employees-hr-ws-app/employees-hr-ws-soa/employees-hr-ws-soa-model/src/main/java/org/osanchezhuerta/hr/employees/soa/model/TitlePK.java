@@ -69,4 +69,11 @@ public class TitlePK implements Serializable {
 		
 		return hash;
 	}
+	@Override
+	public String toString() {
+		return "TitlePK [empNo=" + empNo + ", " + (title != null ? "title=" + title + ", " : "")
+				+ (fromDate != null ? "fromDate=" + fromDate : "") + "]";
+	}
+	
+	
 }

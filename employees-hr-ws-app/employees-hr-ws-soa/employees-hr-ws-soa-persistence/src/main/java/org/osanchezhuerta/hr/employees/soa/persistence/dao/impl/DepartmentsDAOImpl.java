@@ -19,11 +19,6 @@ public class DepartmentsDAOImpl extends AbstractBaseDAO<Department> implements D
 		super(Department.class);
 	}
 	
-	@Override
-	public int insertarDepartment(Department departamento) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 	
 	public EntityManager getEntityManager() {
 		return entityManager;

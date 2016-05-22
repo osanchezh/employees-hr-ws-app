@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class EmployeesDAOImplTest  extends AbstractDBTestUnit {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeesDAOImplTest.class);
 	
 	private EmployeesDAO employeesDAO = new EmployeesDAOImpl();
 	

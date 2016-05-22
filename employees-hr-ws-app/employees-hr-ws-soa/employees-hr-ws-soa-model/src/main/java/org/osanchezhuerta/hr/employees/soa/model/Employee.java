@@ -49,7 +49,7 @@ public class Employee implements Serializable {
 	private Date updateDate;
 
 
-	private byte active;
+	private boolean active;
 
 
 	@Column(name="last_name")
@@ -83,11 +83,11 @@ public class Employee implements Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public byte getActive() {
+	public boolean getActive() {
 		return active;
 	}
 
-	public void setActive(byte active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 	
@@ -226,6 +226,21 @@ public class Employee implements Serializable {
 		title.setEmployee(null);
 
 		return title;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [empNo=" + empNo + ", " + (birthDate != null ? "birthDate=" + birthDate + ", " : "")
+				+ (firstName != null ? "firstName=" + firstName + ", " : "")
+				+ (gender != null ? "gender=" + gender + ", " : "")
+				+ (hireDate != null ? "hireDate=" + hireDate + ", " : "")
+				+ (updateDate != null ? "updateDate=" + updateDate + ", " : "") + "active=" + active + ", "
+				+ (lastName != null ? "lastName=" + lastName + ", " : "")
+				+ (deptEmps != null ? "deptEmps=" + deptEmps + ", " : "")
+				+ (deptManagers != null ? "deptManagers=" + deptManagers + ", " : "")
+				+ (salaries != null ? "salaries=" + salaries + ", " : "") + (titles != null ? "titles=" + titles : "")
+				+ "]";
 	}
 
 }

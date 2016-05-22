@@ -59,4 +59,9 @@ public class SalaryPK implements Serializable {
 		
 		return hash;
 	}
+	@Override
+	public String toString() {
+		return "SalaryPK [empNo=" + empNo + ", " + (fromDate != null ? "fromDate=" + fromDate : "") + "]";
+	}
+	
 }

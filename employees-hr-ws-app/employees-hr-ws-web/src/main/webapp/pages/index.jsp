@@ -3,14 +3,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</title>
+        <title>EmployeesHRServiceHttpSoap11Endpoint</title>
     </head>
     <body>
-        <h1>DictamenElectronicoBDTUServiceHttpSoap11Endpoint</h1>
+        <h1>EmployeesHRServiceHttpSoap11Endpoint</h1>
         
         <h4>Version 1.0</h4>
 <%
-    String redirectURL = "DictamenElectronicoBDTUService";
+    String redirectURL = "EmployeesHRService";
     response.sendRedirect(redirectURL);
 %>
 

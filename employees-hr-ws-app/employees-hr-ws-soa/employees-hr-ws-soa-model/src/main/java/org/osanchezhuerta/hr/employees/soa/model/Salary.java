@@ -73,4 +73,11 @@ public class Salary implements Serializable {
 		this.employee = employee;
 	}
 
+	@Override
+	public String toString() {
+		return "Salary [" + (id != null ? "id=" + id + ", " : "") + "salary=" + salary + ", "
+				+ (toDate != null ? "toDate=" + toDate + ", " : "") + (employee != null ? "employee=" + employee : "")
+				+ "]";
+	}
+
 }

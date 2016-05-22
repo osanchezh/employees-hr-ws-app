@@ -63,4 +63,12 @@ public class Title implements Serializable {
 		this.employee = employee;
 	}
 
+	@Override
+	public String toString() {
+		return "Title [" + (id != null ? "id=" + id + ", " : "") + (toDate != null ? "toDate=" + toDate + ", " : "")
+				+ (employee != null ? "employee=" + employee : "") + "]";
+	}
+	
+	
+
 }
