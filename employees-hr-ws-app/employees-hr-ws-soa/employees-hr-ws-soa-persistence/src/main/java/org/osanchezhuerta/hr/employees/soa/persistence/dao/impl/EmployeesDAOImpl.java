@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 public class EmployeesDAOImpl  extends AbstractBaseDAO<Employee> implements EmployeesDAO  {
 	private final Logger LOGGER = LoggerFactory.getLogger(EmployeesDAOImpl.class);
 
-	@PersistenceContext(unitName = "DictamenWSContadorPU")
+	@PersistenceContext(unitName = "EmployeesHRPU")
 	private EntityManager entityManager;
 	
 

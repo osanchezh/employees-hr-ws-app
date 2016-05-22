@@ -94,4 +94,10 @@ public class Department implements Serializable {
 		return deptManager;
 	}
 
+	@Override
+	public String toString() {
+		return "Department [deptNo=" + deptNo + ", deptName=" + deptName + ", deptEmps=" + deptEmps + ", deptManagers="
+				+ deptManagers + "]";
+	}
+
 }
