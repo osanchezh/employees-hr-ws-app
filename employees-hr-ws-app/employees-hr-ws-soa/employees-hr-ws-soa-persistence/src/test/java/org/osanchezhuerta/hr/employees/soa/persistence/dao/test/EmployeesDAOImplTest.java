@@ -1,11 +1,11 @@
 package org.osanchezhuerta.hr.employees.soa.persistence.dao.test;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.EmployeesDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.EmployeesDAOImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EmployeesDAOImplTest  extends AbstractDBTestUnit {
 

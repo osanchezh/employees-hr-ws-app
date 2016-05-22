@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import org.osanchezhuerta.hr.employees.soa.model.Employee;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.AbstractBaseDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.EmployeesDAO;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -2,7 +2,6 @@ package org.osanchezhuerta.hr.employees.soa.integration.transformer;
 
 import org.osanchezhuerta.hr.employees.soa.commons.to.TitleTO;
 import org.osanchezhuerta.hr.employees.soa.integration.api.dto.TitleDTO;
-import org.osanchezhuerta.hr.employees.soa.model.Title;
 
 public final class TitleTransformer {
 	

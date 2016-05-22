@@ -5,7 +5,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.osanchezhuerta.hr.employees.soa.model.Department;
-import org.osanchezhuerta.hr.employees.soa.model.Employee;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.AbstractBaseDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.DepartmentsDAO;
 
