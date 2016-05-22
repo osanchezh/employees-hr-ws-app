@@ -11,7 +11,9 @@
   
   <packaging>ejb</packaging>
   
-  
+  <properties>
+  		<loghome.app>/home/osanchezhuerta/loghome</loghome.app>
+  </properties>
 
 	<dependencies>
 		<dependency>
