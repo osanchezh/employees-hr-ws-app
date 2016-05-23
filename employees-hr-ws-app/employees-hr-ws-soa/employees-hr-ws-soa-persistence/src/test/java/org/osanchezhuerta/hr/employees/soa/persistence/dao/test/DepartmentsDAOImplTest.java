@@ -4,9 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.osanchezhuerta.hr.employees.soa.model.Department;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.DepartmentsDAO;
-import org.osanchezhuerta.hr.employees.soa.persistence.dao.SalariesDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.DepartmentsDAOImpl;
-import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.SalariesDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

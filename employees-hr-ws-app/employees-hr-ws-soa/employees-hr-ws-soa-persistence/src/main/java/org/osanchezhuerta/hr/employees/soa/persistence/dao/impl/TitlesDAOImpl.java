@@ -9,8 +9,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.apache.commons.lang3.StringUtils;
-import org.osanchezhuerta.hr.employees.soa.model.Salary;
 import org.osanchezhuerta.hr.employees.soa.model.Title;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.AbstractBaseDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.TitlesDAO;

@@ -1,15 +1,14 @@
 package org.osanchezhuerta.hr.employees.soa.persistence.dao.test;
 
-import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.TitlesDAOImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.osanchezhuerta.hr.employees.soa.model.Title;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.TitlesDAO;
+import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.TitlesDAOImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TitlesDAOImplTest  extends AbstractDBTestUnit {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TitlesDAOImplTest.class);

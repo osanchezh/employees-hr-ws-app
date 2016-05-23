@@ -6,11 +6,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.osanchezhuerta.hr.employees.soa.model.Salary;
-import org.osanchezhuerta.hr.employees.soa.model.Title;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.SalariesDAO;
-import org.osanchezhuerta.hr.employees.soa.persistence.dao.TitlesDAO;
 import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.SalariesDAOImpl;
-import org.osanchezhuerta.hr.employees.soa.persistence.dao.impl.TitlesDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

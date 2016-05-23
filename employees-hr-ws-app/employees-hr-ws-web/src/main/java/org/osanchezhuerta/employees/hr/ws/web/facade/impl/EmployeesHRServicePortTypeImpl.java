@@ -1,5 +1,14 @@
 package org.osanchezhuerta.employees.hr.ws.web.facade.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.jws.WebService;
+import javax.xml.ws.Holder;
+
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderRequest;
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderResponse;
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.ObjectFactory;
@@ -19,20 +28,6 @@ import org.osanchezhuerta.hr.employees.soa.integration.api.dto.SalaryDTO;
 import org.osanchezhuerta.hr.employees.soa.integration.api.dto.TitleDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.jws.WebMethod;
-import javax.jws.WebService;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.ws.Holder;
 
 @LocalBean
 @Stateless(name = "EmployeesHRService", mappedName = "EmployeesHRService")
