@@ -1,10 +1,8 @@
 
 package org.osanchezhuerta.employees.hr.ws.web.domain.xsd;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -21,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}integer" maxOccurs="unbounded"/>
+ *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ConsultarSalariesPorRango {
 
-    @XmlElement(required = true)
-    protected List<BigInteger> empNo;
+    @XmlElement(type = Integer.class)
+    protected List<Integer> empNo;
 
     /**
      * Gets the value of the empNo property.
@@ -57,13 +55,13 @@ public class ConsultarSalariesPorRango {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link BigInteger }
+     * {@link Integer }
      * 
      * 
      */
-    public List<BigInteger> getEmpNo() {
+    public List<Integer> getEmpNo() {
         if (empNo == null) {
-            empNo = new ArrayList<BigInteger>();
+            empNo = new ArrayList<Integer>();
         }
         return this.empNo;
     }

@@ -1,12 +1,9 @@
 
 package org.osanchezhuerta.employees.hr.ws.web.domain.xsd;
 
-import java.math.BigInteger;
-
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -22,8 +19,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="salary" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="salary" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="fromDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="toDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *       &lt;/sequence>
@@ -43,10 +40,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class SalaryVO {
 
-    @XmlElement(required = true)
-    protected BigInteger salary;
-    @XmlElement(required = true)
-    protected BigInteger empNo;
+    protected int salary;
+    protected int empNo;
     @XmlElementRef(name = "fromDate", namespace = "http://domain.web.ws.hr.employees.osanchezhuerta.org/xsd/", type = JAXBElement.class, required = false)
     protected JAXBElement<XMLGregorianCalendar> fromDate;
     @XmlElementRef(name = "toDate", namespace = "http://domain.web.ws.hr.employees.osanchezhuerta.org/xsd/", type = JAXBElement.class, required = false)
@@ -55,48 +50,32 @@ public class SalaryVO {
     /**
      * Gets the value of the salary property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getSalary() {
+    public int getSalary() {
         return salary;
     }
 
     /**
      * Sets the value of the salary property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setSalary(BigInteger value) {
+    public void setSalary(int value) {
         this.salary = value;
     }
 
     /**
      * Gets the value of the empNo property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getEmpNo() {
+    public int getEmpNo() {
         return empNo;
     }
 
     /**
      * Sets the value of the empNo property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setEmpNo(BigInteger value) {
+    public void setEmpNo(int value) {
         this.empNo = value;
     }
 

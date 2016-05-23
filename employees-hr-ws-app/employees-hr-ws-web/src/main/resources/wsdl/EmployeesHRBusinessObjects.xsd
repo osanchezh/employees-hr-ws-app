@@ -14,7 +14,7 @@
 
 	<xs:complexType name="headerResponse">
 		<xs:sequence>
-			<xs:element name="errorCode" type="xs:integer" />
+			<xs:element name="errorCode" type="xs:int" />
 			<xs:element name="errorDescription" type="xs:string" />
 			<xs:element name="successful" type="xs:boolean" />
 			<xs:element name="responseDate" type="xs:dateTime" />
@@ -33,20 +33,20 @@
 			<xs:element name="contextoEntidad" type="xs:string" minOccurs="0" />
 			<xs:element name="fechaPeticion" type="xs:anySimpleType" minOccurs="0" />
 			<xs:element name="folio" type="xs:string" minOccurs="0" />
-			<xs:element name="idCanal" type="xs:integer" />
+			<xs:element name="idCanal" type="xs:int" />
 			<xs:element name="idEntidad" type="xs:string" minOccurs="0" />
-			<xs:element name="idOperacion" type="xs:integer" />
-			<xs:element name="idOrganizacion" type="xs:integer" />
-			<xs:element name="idServicio" type="xs:integer" />
-			<xs:element name="idSistema" type="xs:integer" />
-			<xs:element name="idZona" type="xs:integer" />
+			<xs:element name="idOperacion" type="xs:int" />
+			<xs:element name="idOrganizacion" type="xs:int" />
+			<xs:element name="idServicio" type="xs:int" />
+			<xs:element name="idSistema" type="xs:int" />
+			<xs:element name="idZona" type="xs:int" />
 		</xs:sequence>
 	</xs:complexType>
 
 
 	<xs:complexType name="ConsultarSalariesPorRango">
 		<xs:sequence>
-			<xs:element name="empNo" type="xs:integer"
+			<xs:element name="empNo" type="xs:int"
 				nillable="false" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -54,9 +54,9 @@
 
 	<xs:complexType name="SalaryVO">
 		<xs:sequence>
-			<xs:element name="salary" type="xs:integer"
+			<xs:element name="salary" type="xs:int"
 				nillable="false" minOccurs="1" />
-			<xs:element name="empNo" type="xs:integer"
+			<xs:element name="empNo" type="xs:int"
 				nillable="false" minOccurs="1" />
 			<xs:element name="fromDate" type="xs:date" nillable="true" minOccurs="0" />
 			<xs:element name="toDate" type="xs:date" nillable="true" minOccurs="0" />
@@ -66,7 +66,7 @@
 	
 		<xs:complexType name="TitleVO">
 		<xs:sequence>
-			<xs:element name="empNo" type="xs:integer" nillable="false" minOccurs="1" />
+			<xs:element name="empNo" type="xs:int" nillable="false" minOccurs="1" />
 			<xs:element name="title" type="xs:string" nillable="false" minOccurs="1" />
 			<xs:element name="fromDate" type="xs:date" nillable="true" minOccurs="0" />
 

@@ -1,8 +1,6 @@
 
 package org.osanchezhuerta.employees.hr.ws.web.domain.xsd;
 
-import java.math.BigInteger;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -21,7 +19,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="errorCode" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="errorCode" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="errorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="successful" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="responseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
@@ -42,8 +40,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class HeaderResponse {
 
-    @XmlElement(required = true)
-    protected BigInteger errorCode;
+    protected int errorCode;
     @XmlElement(required = true)
     protected String errorDescription;
     protected boolean successful;
@@ -54,24 +51,16 @@ public class HeaderResponse {
     /**
      * Gets the value of the errorCode property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getErrorCode() {
+    public int getErrorCode() {
         return errorCode;
     }
 
     /**
      * Sets the value of the errorCode property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setErrorCode(BigInteger value) {
+    public void setErrorCode(int value) {
         this.errorCode = value;
     }
 

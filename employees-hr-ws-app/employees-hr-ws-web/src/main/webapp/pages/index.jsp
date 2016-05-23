@@ -10,7 +10,7 @@
         
         <h4>Version 1.0</h4>
 <%
-    String redirectURL = "EmployeesHRService";
+    String redirectURL = "EmployeesHRServiceHttpSoap11Endpoint";
     response.sendRedirect(redirectURL);
 %>
 

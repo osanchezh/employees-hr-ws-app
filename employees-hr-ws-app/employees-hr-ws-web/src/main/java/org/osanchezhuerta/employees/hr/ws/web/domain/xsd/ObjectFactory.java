@@ -52,6 +52,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ConsultarSalariesPorRango }
+     * 
+     */
+    public ConsultarSalariesPorRango createConsultarSalariesPorRango() {
+        return new ConsultarSalariesPorRango();
+    }
+
+    /**
+     * Create an instance of {@link TitleVO }
+     * 
+     */
+    public TitleVO createTitleVO() {
+        return new TitleVO();
+    }
+
+    /**
      * Create an instance of {@link SalaryVO }
      * 
      */
@@ -73,22 +89,6 @@ public class ObjectFactory {
      */
     public HeaderResponse createHeaderResponse() {
         return new HeaderResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarSalariesPorRango }
-     * 
-     */
-    public ConsultarSalariesPorRango createConsultarSalariesPorRango() {
-        return new ConsultarSalariesPorRango();
-    }
-
-    /**
-     * Create an instance of {@link TitleVO }
-     * 
-     */
-    public TitleVO createTitleVO() {
-        return new TitleVO();
     }
 
     /**

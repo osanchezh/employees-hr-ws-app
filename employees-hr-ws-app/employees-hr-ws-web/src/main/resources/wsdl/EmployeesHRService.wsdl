@@ -51,7 +51,7 @@
 		<wsdl:part name="parameters" element="hr:consultarTitlesPorEmpNoResponse" />
 	</wsdl:message>
 
-	<wsdl:message name="DictamenElectronicoBdtuServiceException">
+	<wsdl:message name="EmployeesHRServiceException">
 		<wsdl:part name="parameters" element="hr:Exception" />
 	</wsdl:message>
 
@@ -61,7 +61,7 @@
 		<wsdl:operation name="bajaEmployee">
 			<wsdl:input message="hr:bajaEmployeeRequest" wsaw:Action="urn:bajaEmployee" />
 			<wsdl:output message="hr:bajaEmployeeResponse" wsaw:Action="urn:bajaEmployeeResponse" />
-			<wsdl:fault name="bajaEmployeeException" message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:bajaEmployeeException" />
+			<wsdl:fault name="bajaEmployeeException" message="hr:EmployeesHRServiceException" wsaw:Action="urn:bajaEmployeeException" />
 		</wsdl:operation>
 
 
@@ -69,7 +69,7 @@
 			<wsdl:input message="hr:insertarDepartmentsRequest" wsaw:Action="urn:insertarDepartmentsRequest" />
 			<wsdl:output message="hr:insertarDepartmentsResponse" wsaw:Action="urn:insertarDepartmentsResponse" />
 			<wsdl:fault name="insertarDepartmentsException"
-				message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:insertarDepartmentsException" />
+				message="hr:EmployeesHRServiceException" wsaw:Action="urn:insertarDepartmentsException" />
 		</wsdl:operation>
 
 
@@ -77,13 +77,13 @@
 			<wsdl:input message="hr:consultarSalariesPorRangoRequest" wsaw:Action="urn:consultarSalariesPorRango" />
 			<wsdl:output message="hr:consultarSalariesPorRangoResponse" wsaw:Action="urn:consultarSalariesPorRangoResponse" />
 			<wsdl:fault name="consultarSalariesPorRangoException"
-				message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:consultarSalariesPorRangoException" />
+				message="hr:EmployeesHRServiceException" wsaw:Action="urn:consultarSalariesPorRangoException" />
 		</wsdl:operation>
 
 		<wsdl:operation name="consultarTitlesPorEmpNo">
 			<wsdl:input message="hr:consultarTitlesPorEmpNoRequest" wsaw:Action="urn:consultarTitlesPorEmpNo" />
 			<wsdl:output message="hr:consultarTitlesPorEmpNoResponse" wsaw:Action="urn:consultarTitlesPorEmpNoResponse" />
-			<wsdl:fault name="consultarTitlesPorEmpNoException" message="hr:DictamenElectronicoBdtuServiceException" wsaw:Action="urn:consultarTitlesPorEmpNoException" />
+			<wsdl:fault name="consultarTitlesPorEmpNoException" message="hr:EmployeesHRServiceException" wsaw:Action="urn:consultarTitlesPorEmpNoException" />
 		</wsdl:operation>
 
 
@@ -151,7 +151,7 @@
 		</wsdl:operation>
 
 	</wsdl:binding>
-	<wsdl:service name="EmployeesHRService">
+	<wsdl:service name="employees-hr-ws-web">
 		<wsdl:port name="EmployeesHRServiceHttpSoap11Endpoint"
 			binding="hr:EmployeesHRServiceSoap11Binding">
 			<soap:address

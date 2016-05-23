@@ -34,6 +34,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Exception }
+     * 
+     */
+    public Exception createException() {
+        return new Exception();
+    }
+
+    /**
      * Create an instance of {@link InsertarDepartments }
      * 
      */
@@ -47,70 +55,6 @@ public class ObjectFactory {
      */
     public InsertarDepartmentInput createInsertarDepartmentInput() {
         return new InsertarDepartmentInput();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarSalariesPorRangoResponse }
-     * 
-     */
-    public ConsultarSalariesPorRangoResponse createConsultarSalariesPorRangoResponse() {
-        return new ConsultarSalariesPorRangoResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarSalariesPorRangoOutput }
-     * 
-     */
-    public ConsultarSalariesPorRangoOutput createConsultarSalariesPorRangoOutput() {
-        return new ConsultarSalariesPorRangoOutput();
-    }
-
-    /**
-     * Create an instance of {@link InsertarDepartmentsResponse }
-     * 
-     */
-    public InsertarDepartmentsResponse createInsertarDepartmentsResponse() {
-        return new InsertarDepartmentsResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarSalariesPorRango }
-     * 
-     */
-    public ConsultarSalariesPorRango createConsultarSalariesPorRango() {
-        return new ConsultarSalariesPorRango();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarSalariesPorRangoInput }
-     * 
-     */
-    public ConsultarSalariesPorRangoInput createConsultarSalariesPorRangoInput() {
-        return new ConsultarSalariesPorRangoInput();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarTitlesPorEmpNoResponse }
-     * 
-     */
-    public ConsultarTitlesPorEmpNoResponse createConsultarTitlesPorEmpNoResponse() {
-        return new ConsultarTitlesPorEmpNoResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConsultarTitlesPorEmpNoOutput }
-     * 
-     */
-    public ConsultarTitlesPorEmpNoOutput createConsultarTitlesPorEmpNoOutput() {
-        return new ConsultarTitlesPorEmpNoOutput();
-    }
-
-    /**
-     * Create an instance of {@link BajaEmployeeResponse }
-     * 
-     */
-    public BajaEmployeeResponse createBajaEmployeeResponse() {
-        return new BajaEmployeeResponse();
     }
 
     /**
@@ -138,11 +82,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Exception }
+     * Create an instance of {@link InsertarDepartmentsResponse }
      * 
      */
-    public Exception createException() {
-        return new Exception();
+    public InsertarDepartmentsResponse createInsertarDepartmentsResponse() {
+        return new InsertarDepartmentsResponse();
+    }
+
+    /**
+     * Create an instance of {@link BajaEmployeeResponse }
+     * 
+     */
+    public BajaEmployeeResponse createBajaEmployeeResponse() {
+        return new BajaEmployeeResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarTitlesPorEmpNoResponse }
+     * 
+     */
+    public ConsultarTitlesPorEmpNoResponse createConsultarTitlesPorEmpNoResponse() {
+        return new ConsultarTitlesPorEmpNoResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarTitlesPorEmpNoOutput }
+     * 
+     */
+    public ConsultarTitlesPorEmpNoOutput createConsultarTitlesPorEmpNoOutput() {
+        return new ConsultarTitlesPorEmpNoOutput();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarSalariesPorRangoResponse }
+     * 
+     */
+    public ConsultarSalariesPorRangoResponse createConsultarSalariesPorRangoResponse() {
+        return new ConsultarSalariesPorRangoResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarSalariesPorRangoOutput }
+     * 
+     */
+    public ConsultarSalariesPorRangoOutput createConsultarSalariesPorRangoOutput() {
+        return new ConsultarSalariesPorRangoOutput();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarSalariesPorRango }
+     * 
+     */
+    public ConsultarSalariesPorRango createConsultarSalariesPorRango() {
+        return new ConsultarSalariesPorRango();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarSalariesPorRangoInput }
+     * 
+     */
+    public ConsultarSalariesPorRangoInput createConsultarSalariesPorRangoInput() {
+        return new ConsultarSalariesPorRangoInput();
     }
 
     /**

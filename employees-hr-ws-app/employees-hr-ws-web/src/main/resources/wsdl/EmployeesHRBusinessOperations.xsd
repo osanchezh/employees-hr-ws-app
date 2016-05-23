@@ -34,7 +34,7 @@
 
 	<xs:complexType name="bajaEmployeeInput">
 		<xs:sequence>
-			<xs:element name="empNo" type="xs:integer" nillable="false" minOccurs="1" />
+			<xs:element name="empNo" type="xs:int" nillable="false" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -123,7 +123,7 @@
 			<xs:sequence>
 				<xs:element name="governanceHeaderRequest" type="hrdomain:governanceHeaderRequest"
 					minOccurs="1" />
-				<xs:element name="empNo" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1" />
+				<xs:element name="empNo" type="xs:int" nillable="false" minOccurs="1" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

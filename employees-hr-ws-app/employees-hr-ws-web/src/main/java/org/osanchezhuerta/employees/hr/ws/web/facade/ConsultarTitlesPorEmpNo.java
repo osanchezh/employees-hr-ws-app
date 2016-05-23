@@ -1,14 +1,11 @@
 
 package org.osanchezhuerta.employees.hr.ws.web.facade;
 
-import java.math.BigInteger;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderRequest;
 
 
@@ -23,7 +20,7 @@ import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderRequest
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="governanceHeaderRequest" type="{http://domain.web.ws.hr.employees.osanchezhuerta.org/xsd/}governanceHeaderRequest"/>
- *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="empNo" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -42,8 +39,7 @@ public class ConsultarTitlesPorEmpNo {
 
     @XmlElement(required = true)
     protected GovernanceHeaderRequest governanceHeaderRequest;
-    @XmlElement(required = true)
-    protected BigInteger empNo;
+    protected int empNo;
 
     /**
      * Gets the value of the governanceHeaderRequest property.
@@ -72,24 +68,16 @@ public class ConsultarTitlesPorEmpNo {
     /**
      * Gets the value of the empNo property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getEmpNo() {
+    public int getEmpNo() {
         return empNo;
     }
 
     /**
      * Sets the value of the empNo property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setEmpNo(BigInteger value) {
+    public void setEmpNo(int value) {
         this.empNo = value;
     }
 

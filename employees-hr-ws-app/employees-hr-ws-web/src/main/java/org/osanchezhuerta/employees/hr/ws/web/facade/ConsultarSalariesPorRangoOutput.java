@@ -3,12 +3,10 @@ package org.osanchezhuerta.employees.hr.ws.web.facade;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.SalaryVO;
 
 

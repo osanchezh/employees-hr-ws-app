@@ -2,16 +2,21 @@ package org.osanchezhuerta.employees.hr.ws.web.facade.impl;
 
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderRequest;
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.GovernanceHeaderResponse;
+import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.ObjectFactory;
 import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.SalaryVO;
+import org.osanchezhuerta.employees.hr.ws.web.domain.xsd.TitleVO;
 import org.osanchezhuerta.employees.hr.ws.web.facade.BajaEmployeeInput;
 import org.osanchezhuerta.employees.hr.ws.web.facade.ConsultarSalariesPorRangoInput;
 import org.osanchezhuerta.employees.hr.ws.web.facade.ConsultarSalariesPorRangoOutput;
 import org.osanchezhuerta.employees.hr.ws.web.facade.ConsultarTitlesPorEmpNoOutput;
-import org.osanchezhuerta.employees.hr.ws.web.facade.DictamenElectronicoBdtuServiceException;
+import org.osanchezhuerta.employees.hr.ws.web.facade.EmployeesHRServiceException;
 import org.osanchezhuerta.employees.hr.ws.web.facade.EmployeesHRServicePortType;
 import org.osanchezhuerta.employees.hr.ws.web.facade.InsertarDepartmentInput;
+import org.osanchezhuerta.employees.hr.ws.web.util.DateUtils;
 import org.osanchezhuerta.hr.employees.soa.integration.api.RepositoryEmployeeIntegrator;
+import org.osanchezhuerta.hr.employees.soa.integration.api.dto.DepartmentDTO;
 import org.osanchezhuerta.hr.employees.soa.integration.api.dto.SalaryDTO;
+import org.osanchezhuerta.hr.employees.soa.integration.api.dto.TitleDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +36,8 @@ import javax.xml.ws.Holder;
 
 @LocalBean
 @Stateless(name = "EmployeesHRService", mappedName = "EmployeesHRService")
-@WebService(serviceName = "hr-employees-ws", name = "EmployeesHRService", portName = "EmployeesHRServiceHttpSoap11Endpoint", 
+@WebService(serviceName = "employees-hr-ws-web", name = "EmployeesHRServiceHttpSoap11Endpoint", 
+portName = "EmployeesHRServiceHttpSoap11Endpoint",  
 endpointInterface = "org.osanchezhuerta.employees.hr.ws.web.facade.EmployeesHRServicePortType")
 public class EmployeesHRServicePortTypeImpl implements EmployeesHRServicePortType {
 
@@ -42,26 +48,33 @@ public class EmployeesHRServicePortTypeImpl implements EmployeesHRServicePortTyp
 	private RepositoryEmployeeIntegrator repositoryEmployeeIntegrator;
 	
 
+	
+	public RepositoryEmployeeIntegrator getRepositoryEmployeeIntegrator() {
+		return repositoryEmployeeIntegrator;
+	}
+
+	public void setRepositoryEmployeeIntegrator(RepositoryEmployeeIntegrator repositoryEmployeeIntegrator) {
+		this.repositoryEmployeeIntegrator = repositoryEmployeeIntegrator;
+	}
 
 	@Override
 	public void bajaEmployee(GovernanceHeaderRequest governanceHeaderRequest, BajaEmployeeInput bajaEmployeeInput,
 			Holder<GovernanceHeaderResponse> governanceHeaderResponse, Holder<Integer> bajaEmployee)
-			throws DictamenElectronicoBdtuServiceException {
-		
-		
-		BigInteger empno = bajaEmployeeInput.getEmpNo();
-		Integer iempno =empno.intValue();
-		int resultado =repositoryEmployeeIntegrator.bajaEmployeePorNo(iempno);
-		bajaEmployee = new Holder<Integer>();
-		bajaEmployee.value =resultado;
-		
+			throws EmployeesHRServiceException {
+		int empNo = bajaEmployeeInput.getEmpNo();
+		int respuesta = repositoryEmployeeIntegrator.bajaEmployeePorNo(empNo);
+		bajaEmployee.value= new Integer(respuesta);
 	}
 
 	@Override
 	public void insertarDepartments(GovernanceHeaderRequest governanceHeaderRequest,
 			InsertarDepartmentInput insertarDepartmentInput, Holder<GovernanceHeaderResponse> governanceHeaderResponse,
-			Holder<Integer> insertarDepartments) throws DictamenElectronicoBdtuServiceException {
-		// TODO Auto-generated method stub
+			Holder<Integer> insertarDepartments) throws EmployeesHRServiceException {
+		DepartmentDTO departmentDTO =new DepartmentDTO();
+		departmentDTO.setDeptName(insertarDepartmentInput.getDeptName());
+		departmentDTO.setDeptNo(insertarDepartmentInput.getDeptNo());
+		int respuesta =repositoryEmployeeIntegrator.insertarDepartment(departmentDTO);
+		insertarDepartments.value = new Integer(respuesta);
 		
 	}
 
@@ -70,42 +83,55 @@ public class EmployeesHRServicePortTypeImpl implements EmployeesHRServicePortTyp
 			ConsultarSalariesPorRangoInput consultarSalariesPorRangoInput,
 			Holder<GovernanceHeaderResponse> governanceHeaderResponse,
 			Holder<ConsultarSalariesPorRangoOutput> consultarSalariesPorRangoOutput)
-			throws DictamenElectronicoBdtuServiceException {
-		List<BigInteger> lstEmpNo= consultarSalariesPorRangoInput.getLstEmpNo().getEmpNo();
-		List<Integer> lstIEmpNo = new ArrayList<Integer>();
-		for(BigInteger bi :lstEmpNo){
-			lstIEmpNo.add(bi.intValue());
-		}
+			throws EmployeesHRServiceException {
+		
+
+		List<Integer> lstEmpNo= consultarSalariesPorRangoInput.getLstEmpNo().getEmpNo();
+
 		int pageNumber = consultarSalariesPorRangoInput.getPageNumber();
 		int pageSize= consultarSalariesPorRangoInput.getPageSize();
-		List<SalaryDTO> lstSalaryDTO= repositoryEmployeeIntegrator.consultarSalariesPorRango(lstIEmpNo, pageNumber, pageSize);
+		LOGGER.debug("pageNumber="+pageNumber);
+		LOGGER.debug("pageSize="+pageSize);
+		LOGGER.debug("lstIEmpNo="+lstEmpNo.toString());
+		ObjectFactory objHR = new ObjectFactory();
+		List<SalaryDTO> lstSalaryDTO= repositoryEmployeeIntegrator.consultarSalariesPorRango(lstEmpNo, pageNumber, pageSize);
 		List<SalaryVO> lstSalaryVO = new ArrayList<SalaryVO>(0);
 		for(SalaryDTO salaryDTO:lstSalaryDTO){
 			SalaryVO salaryVO = new SalaryVO();
 
-			salaryVO.setEmpNo(new BigInteger(""+salaryDTO.getEmpNo()));
-			
+			salaryVO.setEmpNo(salaryDTO.getEmpNo());
+			salaryVO.setSalary(salaryDTO.getSalary());
+			DateUtils.convertirDateToXMLGregorianCalendar(salaryDTO.getToDate());
+			salaryVO.setFromDate(objHR.createSalaryVOFromDate(DateUtils.convertirDateToXMLGregorianCalendar(salaryDTO.getFromDate())));
+			salaryVO.setToDate(objHR.createSalaryVOToDate(DateUtils.convertirDateToXMLGregorianCalendar(salaryDTO.getToDate())));
+
 			lstSalaryVO.add(salaryVO);
 		}
-		consultarSalariesPorRangoOutput.value.getLstEmpNo().addAll(lstSalaryVO);
-	}
-
-	@Override
-	public void consultarTitlesPorEmpNo(GovernanceHeaderRequest governanceHeaderRequest, BigInteger empNo,
-			Holder<GovernanceHeaderResponse> governanceHeaderResponse,
-			Holder<ConsultarTitlesPorEmpNoOutput> consultarTitlesPorEmpNoOutput)
-			throws DictamenElectronicoBdtuServiceException {
-		// TODO Auto-generated method stub
+		ConsultarSalariesPorRangoOutput consultarSalariesPorRangoOutput1 = new ConsultarSalariesPorRangoOutput();
+		consultarSalariesPorRangoOutput1.getLstEmpNo().addAll(lstSalaryVO);
+		consultarSalariesPorRangoOutput.value = consultarSalariesPorRangoOutput1;
 		
 	}
 
-	
-	public RepositoryEmployeeIntegrator getRepositoryEmployeeIntegrator() {
-		return repositoryEmployeeIntegrator;
-	}
-
-	public void setRepositoryEmployeeIntegrator(RepositoryEmployeeIntegrator repositoryEmployeeIntegrator) {
-		this.repositoryEmployeeIntegrator = repositoryEmployeeIntegrator;
+	@Override
+	public void consultarTitlesPorEmpNo(GovernanceHeaderRequest governanceHeaderRequest, int empNo,
+			Holder<GovernanceHeaderResponse> governanceHeaderResponse,
+			Holder<ConsultarTitlesPorEmpNoOutput> consultarTitlesPorEmpNoOutput) throws EmployeesHRServiceException {
+		ObjectFactory objHR = new ObjectFactory();
+		List<TitleDTO> lstTitleDTO= repositoryEmployeeIntegrator.obtenerTitlePorEmpNo(empNo);
+		List<TitleVO> lstTitleVO = new ArrayList<TitleVO>(0);
+		for(TitleDTO titleDTO:lstTitleDTO){
+			TitleVO titleVO = new TitleVO();
+			titleVO.setEmpNo(titleDTO.getEmpNo());
+			titleVO.setFromDate(objHR.createTitleVOFromDate(DateUtils.convertirDateToXMLGregorianCalendar(titleDTO.getFromDate())));
+			titleVO.setTitle(titleDTO.getTitle());
+			lstTitleVO.add(titleVO);
+		}
+		
+		ConsultarTitlesPorEmpNoOutput consultarTitlesPorEmpNo = new ConsultarTitlesPorEmpNoOutput();
+		consultarTitlesPorEmpNo.getLstTitle().addAll(lstTitleVO);
+		consultarTitlesPorEmpNoOutput.value=consultarTitlesPorEmpNo;
+		
 	}
 	
 }
