@@ -13,7 +13,7 @@ First you will need hrdb installed on mysql server
 Database used can be found here: https://launchpad.net/test-db/ 
 Dump files containing inserts of records can be downloaded link above.
 
-The aplicatio generated should be the following:
+The aplication generated should be the following:
 
 ```
  1.employees-hr-ws-soa-app-0.0.0.1.ear
@@ -23,5 +23,5 @@ The aplicatio generated should be the following:
 ## Development notes
 
 JDK used: 1.7
-Time of development: 24 hours
-Reason of development: Testing EJB on Java 7
+,Time of development: 24 hours
+,Reason of development: Testing EJB on Java 7
