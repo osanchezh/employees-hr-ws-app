@@ -22,6 +22,6 @@ The aplication generated should be the following:
 
 ## Development notes
 
-*JDK used: 1.7
-*Time of development: 24 hours
-*Reason of development: Testing EJB/JPA on Java 7
+* JDK used: 1.7
+* Time of development: 24 hours
+* Reason of development: Testing EJB/JPA on Java 7
